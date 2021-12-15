@@ -57,6 +57,10 @@ import java.util.concurrent.atomic.AtomicLong;
         savefile.save(user);
         }
 
+    @GetMapping("/find")
+    public User findGreetById(@RequestParam long id) {
+        return greetingService.getById(id);
+    }
 
     }
 
