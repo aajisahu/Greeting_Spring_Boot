@@ -1,12 +1,12 @@
 package com.bridgelabz.greetings.controller;
 
+import com.bridgelabz.greetings.dto.UserDto;
 import com.bridgelabz.greetings.model.Greeting;
+import com.bridgelabz.greetings.model.User;
+import com.bridgelabz.greetings.repository.IGreetingRepository;
 import com.bridgelabz.greetings.service.IGreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -44,7 +44,19 @@ import java.util.concurrent.atomic.AtomicLong;
     public Greeting greeting() {
         return greetingService.greetingMessage();
 
+
     }
+
+    @PostMapping("/greeting")
+    public String greetingMessage(@RequestBody UserDto userDto) {
+        return greetingService.greetingMessageByName(userDto);
+    }
+        @Autowired
+        IGreetingRepository savefile;
+        public void save(User user){
+        savefile.save(user);
+        }
+
 
     }
 
