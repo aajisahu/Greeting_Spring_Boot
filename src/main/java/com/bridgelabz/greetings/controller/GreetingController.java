@@ -71,5 +71,12 @@ import java.util.concurrent.atomic.AtomicLong;
         return greetingService.updateGreetMessage(id, userDto);
 
     }
+    @DeleteMapping("/deletemessage/{id}")
+    public String deleteGreetMessage(@PathVariable long id) {
+        return greetingService.deleteGreetMessage(id);
+    }
+
+
+
 }
 
