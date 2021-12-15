@@ -1,9 +1,11 @@
 package com.bridgelabz.greetings.model;
 
 import javax.persistence.*;
+//mark class as an Entity
+@Entity
 
-@Entity //mark class as an Entity
-@Table //defining class name as Table name
+//defining class name as Table name
+@Table
 public class User {
     @Id //mark id as primary key
     @GeneratedValue(strategy = GenerationType.AUTO)
